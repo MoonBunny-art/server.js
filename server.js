@@ -92,7 +92,7 @@ var secret = req.query.secret || ‘’;
 var key = (req.query.key || ‘’).toLowerCase().trim();
 
 ```
-if (secret !== 'DEIN_GEHEIMES_PASSWORT_HIER') {
+if (secret !== 'BuildABoat') {
     return res.status(403).json({ status: 'forbidden' });
 }
 
@@ -110,7 +110,7 @@ return res.json({ status: 'ok', message: 'Key hinzugefuegt: ' + key });
 });
 
 app.get(’/keys’, function(req, res) {
-if (req.query.secret !== ‘DEIN_GEHEIMES_PASSWORT_HIER’) {
+if (req.query.secret !== ‘BuildABoat’) {
 return res.status(403).json({ status: ‘forbidden’ });
 }
 return res.json(loadData());

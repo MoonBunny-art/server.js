@@ -45,7 +45,7 @@ app.get('/activate', function(req, res) {
 app.get('/addkey', function(req, res) {
   var secret = String(req.query.secret || '');
   var key = String(req.query.key || '').toLowerCase().trim();
-  if (secret !== 'MEINPASSWORT') return res.status(403).json({status:'forbidden'});
+  if (secret !== 'BuildABoat') return res.status(403).json({status:'forbidden'});
   if (!key) return res.json({status:'error'});
   var d = load();
   d[key] = null;
@@ -55,7 +55,7 @@ app.get('/addkey', function(req, res) {
 
 app.get('/keys', function(req, res) {
   var secret = String(req.query.secret || '');
-  if (secret !== 'MEINPASSWORT') return res.status(403).json({status:'forbidden'});
+  if (secret !== 'BuildABoat') return res.status(403).json({status:'forbidden'});
   return res.json(load());
 });
 
